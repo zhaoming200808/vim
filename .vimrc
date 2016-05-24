@@ -75,6 +75,9 @@ set incsearch "设置快速搜索
 "set cursorline "开启光亮光标行 
 "set cursorcolumn "开启高亮光标列   
 
+
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 "ctag
 
 let g:tagbar_type_go = {
